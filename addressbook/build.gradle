@@ -1,0 +1,26 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+tasks.withType(GroovyCompile) {
+    groovyOptions.encoding = 'UTF-8'
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy:3.0.6'
+    implementation 'org.testng:testng:7.3.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.0.0-alpha-6'
+}
+
+test {
+    useTestNG()
+}
